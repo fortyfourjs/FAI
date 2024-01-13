@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+
+int cmmdc(int x, int y)
+{
+	if (y == 0)
+	{
+		return x;
+	}
+	else
+	{
+		return cmmdc(y, x % y);
+	}
+}
+
+int main()
+{
+	printf("introduceti doua numere: \n");
+	int x, y;
+	scanf_s("%d%d", &x, &y);
+
+	printf("cmmdc-ul dintre %d si %d este %d\n", x, y, cmmdc(x,y));
+
+	int cmmmc = (x * y) / cmmdc(x, y);
+
+	printf("cmmmc-ul dintre %d si %d este %d\n", x, y, cmmmc);
+
+	
+
+	
+
+	return 0;
+}
